@@ -1,0 +1,258 @@
+/* Custom Styles for Property & Insurance Management App */
+
+/* Logo Styles */
+.app-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: #3c4b64;
+}
+
+.logo-icon-large {
+  font-size: 3.5rem;
+  color: #3c4b64;
+}
+
+/* Sidebar Styles */
+.list-group-item.active {
+  background-color: #3c4b64;
+  border-color: #3c4b64;
+  font-weight: bold;
+}
+
+.list-group-item {
+  border-radius: 0 !important;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+  padding: 0.75rem 1rem;
+}
+
+.list-group-item:hover:not(.active) {
+  background-color: #f8f9fa;
+  border-left-color: #adb5bd;
+}
+
+.list-group-item.active {
+  border-left-color: #0d6efd;
+}
+
+.list-group-item i {
+  width: 20px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+}
+
+/* Content area padding */
+.tab-content {
+  padding-top: 1rem;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 767.98px) {
+  .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: -85%;
+    width: 85%;
+    height: 100vh;
+    z-index: 1050;
+    transition: left 0.3s ease;
+    background-color: white;
+    padding: 1rem;
+    padding-top: 4.5rem;
+    overflow-y: auto;
+  }
+
+  .sidebar-container.mobile-open {
+    left: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar-menu {
+    margin-top: 0;
+  }
+  
+  /* Add overlay when menu is open */
+  .sidebar-container.mobile-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 576px) {
+  .app-logo {
+    margin-right: auto;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .container-fluid {
+    padding: 0.75rem !important;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .table {
+    font-size: 0.875rem;
+  }
+  
+  h5 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Equal height cards in mobile view */
+@media (max-width: 992px) {
+  .h-100 {
+    height: auto !important;
+  }
+}
+
+/* Card transition animations */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover styles */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.list-group-item:active {
+  transform: scale(0.98);
+}
+
+/* Notification styles */
+.notification-bell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+.notification-bell .badge {
+  font-size: 0.65rem;
+  padding: 0.25em 0.5em;
+}
+
+.notification-card {
+  transition: all 0.2s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Toast container */
+.toast-container {
+  z-index: 1060;
+}
+
+/* Icon for renewal notifications */
+.fa-calendar-exclamation:before {
+  content: "\f273";
+}
+
+/* Animation for new notifications */
+@keyframes notification-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toast {
+  animation: notification-pulse 1s ease-in-out;
+}
+
+/* Document Generator Styles */
+.document-preview {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  #document-preview, #document-preview * {
+    visibility: visible;
+  }
+  
+  #document-preview {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Add animation for documents page */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.document-generator {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Style for the document preview */
+.document-preview {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the document actions */
+.document-actions {
+  position: sticky;
+  top: 20px;
+} 
